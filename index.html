@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>幕張ことは | アニメ大好きVTuber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f4ebdd;
+    --bg-card: #fbf6ec;
+    --ink: #2a1f17;
+    --ink-soft: #6e5a48;
+    --ink-faint: #9c8676;
+    --accent: #c97070;
+    --accent-deep: #a04545;
+    --gold: #b08550;
+    --line: rgba(42, 31, 23, 0.14);
+    --line-strong: rgba(42, 31, 23, 0.3);
+  }
+
+  html, body { background: var(--bg); }
+
+  body {
+    color: var(--ink);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    line-height: 1.85;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 28px 80px;
+  }
+
+  /* ---------- 画像の保護対策 ---------- */
+  img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    text-align: center;
+    padding: 24px 0 56px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.55em;
+    color: var(--gold);
+    margin-bottom: 22px;
+    text-indent: 0.55em;
+  }
+
+  .hero h1 {
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 700;
+    font-size: 52px;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .hero-romaji {
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.45em;
+    color: var(--ink-faint);
+    margin-bottom: 32px;
+    text-indent: 0.45em;
+  }
+
+  .hero-tagline {
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .hero-meta {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--ink-soft);
+  }
+
+  .hero-meta .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .section-num {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+  }
+
+  .section-head h2 {
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+  }
+
+  .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .section-head .ja {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 15.5px;
+    line-height: 2.05;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-portrait {
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+
+  .about-portrait img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ---------- STATS ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 44px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat {
+    text-align: center;
+    padding: 24px 12px;
+    border-right: 1px solid var(--line);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .stat-num .unit {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 2px;
+    color: var(--ink-soft);
+  }
+
+  .stat-label {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- TAGS ---------- */
+  .specialty-intro {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  .specialty-hint {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .tag-group {
+    margin-bottom: 24px;
+  }
+
+  .tag-group:last-child { margin-bottom: 0; }
+
+  .tag-label {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .tag {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    letter-spacing: 0.06em;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- HIGHLIGHTS (videos) ---------- */
+  .highlights-intro {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .video-grid {
+    display: grid;
+    gap: 28px;
+  }
+
+  .video-item {
+    position: relative;
+  }
+
+  .video-num {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-indent: 0.3em;
+  }
+
+  .video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    overflow: hidden;
+  }
+
+  .video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* ---------- LINKS ---------- */
+  .links {
+    display: grid;
+    gap: 12px;
+  }
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .link-card .icon {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 22px;
+    width: 32px;
+    text-align: center;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .link-card .info { flex: 1; }
+
+  .link-card .title {
+    display: block;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .link-card .handle {
+    display: block;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .link-card .arrow {
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: transform 0.3s ease;
+  }
+
+  .link-card:hover .arrow {
+    transform: translateX(4px);
+    color: var(--accent);
+  }
+
+  /* ---------- INQUIRY FORM ---------- */
+  .inquiry-box {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 36px 32px;
+    text-align: center;
+  }
+
+  .inquiry-box .lead {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .inquiry-box p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    line-height: 1.95;
+  }
+
+  .inquiry-form {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .inquiry-btn {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    padding: 16px 44px;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-indent: 0.25em;
+    margin-top: 8px;
+  }
+
+  .inquiry-btn:hover {
+    background: var(--accent-deep);
+    transform: translateY(-1px);
+  }
+
+  .inquiry-note {
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    padding: 48px 0 0;
+  }
+
+  footer .mark {
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+
+  footer .name {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  footer .copy {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- HASHTAGS ---------- */
+  .hashtags {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hashtags span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 700px) {
+    .wrap { padding: 44px 22px 64px; }
+    .hero { padding: 24px 0 50px; }
+    .hero h1 { font-size: 38px; letter-spacing: 0.04em; }
+    .hero-romaji { font-size: 11px; letter-spacing: 0.35em; }
+    .hero-tagline { font-size: 16px; letter-spacing: 0.08em; }
+    section { padding: 48px 0; }
+    .section-head h2 { font-size: 20px; letter-spacing: 0.15em; }
+    .section-head .ja { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 28px; }
+    .about-portrait { order: -1; max-width: 320px; margin: 0 auto; }
+    .about-text p { font-size: 14.5px; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--line); padding: 18px 12px; }
+    .stat:last-child { border-bottom: none; }
+    .video-grid { gap: 24px; }
+    .link-card { padding: 20px 22px; gap: 16px; }
+    .link-card .title { font-size: 15px; }
+    .inquiry-box { padding: 28px 22px; }
+    .inquiry-btn { padding: 14px 32px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ====================================================== -->
+  <!-- HERO                                                   -->
+  <!-- ====================================================== -->
+  <header class="hero">
+
+    <div class="hero-eyebrow">VTUBER &nbsp;&middot;&nbsp; ANIME LOVER</div>
+    <h1>幕張ことは</h1>
+    <div class="hero-romaji">M A K U H A R I &nbsp; K O T O H A</div>
+    <div class="hero-tagline">アニメに恋した、ひとりのVTuber。</div>
+
+    <div class="hero-meta">
+      <span>個人勢</span>
+      <span class="dot"></span>
+      <span>Anime · Game · Anisong</span>
+    </div>
+
+  </header>
+
+  <!-- ====================================================== -->
+  <!-- 01 ABOUT                                               -->
+  <!-- ====================================================== -->
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 01</span>
+      <h2>About</h2>
+      <span class="rule"></span>
+      <span class="ja">紹介</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>はじめまして、幕張ことはと申します。アニメ・ゲーム・アニソンが大好きな個人VTuberです。</p>
+        <p>ごはんのお供にのアニメを観るアニメ好きとして、好きな作品の魅力を「1分でわかる」スタイルでお届けしています。落ち着いた語り口とリスナーさんとの心地よい距離感を大切に、温かく楽しい空間を目指しています。</p>
+        <p>夢は映画監督。今は動画やお芝居の勉強をしながら、自分だけの物語を少しずつ紡いでいます。</p>
+      </div>
+
+      <div class="about-portrait">
+        <img src="https://drive.google.com/thumbnail?id=1SO6od1Z7Hs80RD4t1lSk_X3C6Co195A_&sz=w1200"
+             alt="幕張ことは 立ち絵"
+             draggable="false"
+             oncontextmenu="return false;">
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">10,000<span class="unit">人＋</span></div>
+        <div class="stat-label">SUBSCRIBERS</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">アニメ</div>
+        <div class="stat-label">SPECIALTY</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">個人勢</div>
+        <div class="stat-label">INDEPENDENT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 02 SPECIALTY                                           -->
+  <!-- ====================================================== -->
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 02</span>
+      <h2>Specialty</h2>
+      <span class="rule"></span>
+      <span class="ja">作品リンク集</span>
+    </div>
+    <p class="specialty-intro">特に大好きなジャンル・作品たち。</p>
+    <p class="specialty-hint">▸ TAP TO WATCH</p>
+
+    <div class="tag-group">
+      <div class="tag-label">— FAVORITE GENRE</div>
+      <div class="tag-list">
+        <a class="tag" href="#" target="_blank" rel="noopener">ロボットアニメ</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">ファンタジー</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">SF</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">RPG</a>
+      </div>
+    </div>
+
+    <div class="tag-group">
+      <div class="tag-label">— BELOVED TITLES</div>
+      <div class="tag-list">
+        <a class="tag" href="#" target="_blank" rel="noopener">聖戦士ダンバイン</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">機動戦士ガンダム</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">無職転生</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">ウマ娘</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">魔法科高校の劣等生</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">境界線上のホライゾン</a>
+        <a class="tag" href="#" target="_blank" rel="noopener">Vivy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 03 HIGHLIGHTS                                          -->
+  <!-- ====================================================== -->
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 03</span>
+      <h2>Highlights</h2>
+      <span class="rule"></span>
+      <span class="ja">配信ハイライト</span>
+    </div>
+    <p class="highlights-intro">代表的な配信アーカイブから3本セレクトしてお届けします。</p>
+
+    <div class="video-grid">
+
+      <div class="video-item">
+        <div class="video-num">— 01</div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/1CjG1bDLxLU"
+                  title="幕張ことは 配信アーカイブ 01"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-num">— 02</div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/ce1qgSLV_7g"
+                  title="幕張ことは 配信アーカイブ 02"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-num">— 03</div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/YhB9ct6ONhE"
+                  title="幕張ことは 配信アーカイブ 03"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 04 CHANNELS                                            -->
+  <!-- ====================================================== -->
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 04</span>
+      <h2>Channels</h2>
+      <span class="rule"></span>
+      <span class="ja">配信</span>
+    </div>
+    <div class="links">
+      <a class="link-card" href="https://www.youtube.com/@cotton-100" target="_blank" rel="noopener">
+        <span class="icon">▶</span>
+        <span class="info">
+          <span class="title">YouTube</span>
+          <span class="handle">@cotton-100　/　配信・アニメ解説ショート</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="link-card" href="https://x.com/cotton_makuhari" target="_blank" rel="noopener">
+        <span class="icon">𝕏</span>
+        <span class="info">
+          <span class="title">X (Twitter)</span>
+          <span class="handle">@cotton_makuhari　/　日々のつぶやき・配信告知</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 05 INQUIRY                                             -->
+  <!-- ====================================================== -->
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 05</span>
+      <h2>Inquiry</h2>
+      <span class="rule"></span>
+      <span class="ja">お問い合わせ</span>
+    </div>
+    <div class="inquiry-box">
+      <div class="lead">企業様・関係者各位へ</div>
+      <p>
+        お仕事のご依頼、タイアップ、作品PR、<br>
+        コラボなどに関するお問い合わせはこちらから。
+      </p>
+
+      <form class="inquiry-form" action="https://formspree.io/f/【ここにIDを入力】" method="POST">
+        <div class="form-group">
+          <label for="name">貴社名・お名前</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">お問い合わせ内容</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="inquiry-btn">送信する</button>
+      </form>
+
+      <div class="inquiry-note">通常3営業日以内にご返信いたします</div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- FOOTER                                                 -->
+  <!-- ====================================================== -->
+  <footer>
+    <div class="mark">❀</div>
+    <div class="name">幕張ことは &nbsp;/&nbsp; MAKUHARI KOTOHA</div>
+    <div class="copy">© COTTON-100 &nbsp;ALL RIGHTS RESERVED</div>
+    <div class="hashtags">
+      <span>#幕張ことは</span>
+      <span>#コットン配信</span>
+      <span>#幕張美術館</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
