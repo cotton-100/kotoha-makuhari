@@ -398,6 +398,89 @@
     color: var(--accent);
   }
 
+  /* ---------- PRESS ---------- */
+  .press-intro {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .press-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .press-card {
+    display: block;
+    padding: 26px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.3s ease;
+  }
+
+  a.press-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .press-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .press-source {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--accent-deep);
+  }
+
+  .press-category {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 3px 10px;
+    border: 1px solid var(--line-strong);
+    color: var(--ink-soft);
+    border-radius: 2px;
+  }
+
+  .press-date {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ink-faint);
+  }
+
+  .press-title {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .press-arrow {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--ink-soft);
+  }
+
+  a.press-card:hover .press-arrow {
+    color: var(--accent-deep);
+  }
+
   /* ---------- INQUIRY FORM ---------- */
   .inquiry-box {
     background: var(--bg-card);
@@ -517,6 +600,8 @@
     .video-grid { gap: 24px; }
     .link-card { padding: 20px 22px; gap: 16px; }
     .link-card .title { font-size: 15px; }
+    .press-card { padding: 22px 22px; }
+    .press-title { font-size: 14px; }
     .inquiry-box { padding: 28px 22px; }
     .inquiry-btn { padding: 14px 32px; font-size: 13px; }
   }
@@ -557,11 +642,11 @@
       </div>
 
      <div class="about-portrait">
-        <img src="tachie.png" 
-             alt="幕張ことは 立ち絵" 
-             width="400" 
-             height="600" 
-             draggable="false" 
+        <img src="tachie.png"
+             alt="幕張ことは 立ち絵"
+             width="400"
+             height="600"
+             draggable="false"
              oncontextmenu="return false;">
       </div>
     </div>
@@ -698,6 +783,89 @@
   <section>
     <div class="section-head">
       <span class="section-num">— 05</span>
+      <h2>Press</h2>
+      <span class="rule"></span>
+      <span class="ja">メディア掲載・出展実績</span>
+    </div>
+    <p class="press-intro">メディア掲載・大型イベント出展・コラボキャンペーン参加の記録です。</p>
+
+    <div class="press-list">
+
+      <!-- ニコニコ超会議2026 -->
+      <a class="press-card" href="https://chokaigi.jp/2026/creatorcross/0161/" target="_blank" rel="noopener">
+        <div class="press-meta">
+          <span class="press-source">ニコニコ超会議2026</span>
+          <span class="press-category">EVENT 出展</span>
+          <span class="press-date">2026.04</span>
+        </div>
+        <div class="press-title">
+          クリエイタークロス「幕張ことはwithフレンズ」<br>
+          個別ブース出展（推しと話せる1on1ブース）
+        </div>
+        <div class="press-arrow">VIEW DETAIL →</div>
+      </a>
+
+      <!-- JOYSOUND ギネス -->
+      <a class="press-card" href="https://streamer.joysound.com/anniversary/1st" target="_blank" rel="noopener">
+        <div class="press-meta">
+          <span class="press-source">JOYSOUND for STREAMER</span>
+          <span class="press-category">RECORD ギネス達成</span>
+          <span class="press-date">2025.12.05-06</span>
+        </div>
+        <div class="press-title">
+          ギネス世界記録™達成<br>
+          「100人の歌枠リレーで目指せ、世界一！」配信者として参加
+        </div>
+        <div class="press-arrow">VIEW DETAIL →</div>
+      </a>
+
+      <!-- Melonbooks 周年企画 -->
+      <a class="press-card" href="https://www.melonbooks.co.jp/tags/index.php?tag=Melonbooks%C3%97VTuber%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%80%80%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AA%E3%83%BC%E3%82%A2%E3%83%B3%E3%83%90%E3%82%B5%E3%83%80%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%80%80%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88" target="_blank" rel="noopener">
+        <div class="press-meta">
+          <span class="press-source">Melonbooks × VTuberスタイル</span>
+          <span class="press-category">CAMPAIGN 周年企画</span>
+          <span class="press-date">2025.11.14-21</span>
+        </div>
+        <div class="press-title">
+          マンスリーアンバサダーキャンペーン1周年記念企画<br>
+          メロンブックス店舗にて公式グッズ販売
+        </div>
+        <div class="press-arrow">VIEW DETAIL →</div>
+      </a>
+
+      <!-- ニコニコ超会議2025 (リンクなし) -->
+      <div class="press-card">
+        <div class="press-meta">
+          <span class="press-source">ニコニコ超会議2025</span>
+          <span class="press-category">EVENT 出展</span>
+          <span class="press-date">2025.04</span>
+        </div>
+        <div class="press-title">
+          クリエイタークロス出展<br>
+          ファン交流ブースを実施
+        </div>
+      </div>
+
+      <!-- 電撃オンライン -->
+      <a class="press-card" href="https://dengekionline.com/article/202410/21296" target="_blank" rel="noopener">
+        <div class="press-meta">
+          <span class="press-source">電撃オンライン</span>
+          <span class="press-category">ARTICLE 記事</span>
+          <span class="press-date">2024.10</span>
+        </div>
+        <div class="press-title">
+          幕張ことはさんはアニメが大好き。<br>
+          ゲーム実況もアニメに関連した作品が中心。
+        </div>
+        <div class="press-arrow">READ ARTICLE →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">— 06</span>
       <h2>Inquiry</h2>
       <span class="rule"></span>
       <span class="ja">お問い合わせ</span>
